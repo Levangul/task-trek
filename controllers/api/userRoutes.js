@@ -10,6 +10,15 @@ router.post('/register', registerRoute.registerUser);
 
 router.post('/', async (req, res) => {
   try {
+
+    const existingUser = await User.findOne({ where: { email: req.body.email } });
+
+
+    if (existingUser) {
+      return res.status(401).render('error401', {
+        message: 'Email already exists, please use a different email'
+      });
+    }
     const userData = await User.create(req.body);
 
     req.session.save(() => {
