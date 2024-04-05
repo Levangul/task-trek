@@ -1,4 +1,4 @@
--- Active: 1712208055007@@127.0.0.1@3306@tasks_db
+-- Active: 1710200740074@@127.0.0.1@3306@tasks_db
 DROP DATABASE IF EXISTS tasks_db;
 
 CREATE DATABASE tasks_db;
